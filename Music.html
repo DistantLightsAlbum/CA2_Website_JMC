@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA_Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,
+  initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />  
+  <Link rel="stylesheet" href="mystyle.css">
+  <script src="js/script.js" defer></script>
+  <title>Music</title>
+</head>
+<body>
+  <div id="overlay"></div>
+  <div id="mobile-menu" class="mobile-main-menu">
+    <ul>
+      <li><a href="Mission.html">Mission</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="Tour.html">Tour</a></li>
+
+      <li class="mobile-only"><a href="Story.html">Story</a></li>
+    <li class="mobile-only"><a href="News.html">News</a></li>
+    <li class="mobile-only"><a href="Music.html">Music</a></li>
+    <li class="mobile-only"><a href="Contact.html">Contact</a></li>
+    </ul>
+  </div>
+ <header class="main-header">
+  <div class="logo">
+    <a href="index.html">
+      <img src="img/Logo_Text_04.png" alt="logo" />
+  </a>
+  </div>
+  <nav class="desktop-main-menu">
+  <ul>
+    <li><a href="Story.html">Story</a></li>
+    <li><a href="News.html">News</a></li>
+    <li><a href="Music.html">Music</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+ </nav>
+</header>
+
+ <!-- Hamburger Menu-->
+  <button id="menu-btn" class="hamburger" type="button">
+    <span class="hamburger-top"></span>
+    <span class="hamburger-middle"></span>
+    <span class="hamburger-bottom"></span>
+  </button> 
+
+  <section class="section-animate bg-music"></section>
+
+  <div class="section-inner-center">
+   <h3>Music</h3>
+   <p>Listen to four exclusive tracks from my album, below.
+  </p>
+ </div>
+
+    <!-- Music player-->
+  <div class="music-container">
+    <div class="music-info">
+      <h4 id="title">Moon</h4>  
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+    </div>
+  
+    <audio src="music/moon.mp3" id="audio"></audio>
+
+    <div class="img-container">
+      <img src="img/moon.jpg" 
+      alt="music-cover"  id="cover"  />
+    </div>
+ 
+
+    <div class="navigation">
+      <button id="prev" class="action-btn">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button id="play" class="action-btn action-btn-big">
+        <i class="fas fa-play"></i>
+      </button>
+      <button id="next" class="action-btn">
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+  </div>
+
+    <!-- Scroll arrow-->
+  <div class="scroll-arrow">
+        <svg width="30px" height="20px">
+          <path
+          stroke="#ffffff"
+          fill="none"
+          stroke-width="2px"
+          d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "
+          ></path>path>
+        </svg>
+      </div>
+    </section>
+
+    <div class="stats">
+    <div>
+        <span class="counter" data-target="7">0</span>
+        <h4>Albums Released</h4>
+    </div>
+    <div>
+        <span class="counter" data-target="5">0</span>
+        <h4>Listening Parties</h4>
+    </div>
+    <div>
+        <span class="counter" data-target="3">0</span>
+        <h4>Tours to date</h4>
+    </div>
+   </div>
+    
+
+    <footer>
+      <ul>
+      <li>Distant Lights &copy; 2026</li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+    </footer>
+ </body>
+</html>
