@@ -539,6 +539,39 @@ ul {
   position: relative;
   margin: 100px 550px;
   z-index: 10;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* Mobile Responsive Music Player */
+@media (max-width: 768px) {
+  .music-container {
+    margin: 80px auto 20px;
+    padding: 15px 20px;
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .img-container {
+    width: 80px;
+  }
+
+  .img-container img {
+    height: 80px;
+  }
+
+  .music-info {
+    padding: 10px 10px 10px 100px;
+  }
+
+  .action-btn {
+    margin: 0 10px;
+    padding: 8px;
+  }
+
+  .action-btn-big {
+    font-size: 24px;
+  }
 }
 
 .img-container {
