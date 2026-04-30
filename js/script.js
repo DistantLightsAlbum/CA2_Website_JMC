@@ -5,13 +5,24 @@ const counters = document.querySelectorAll('.counter');
 let scrollStarted = false;
 
 btn.addEventListener('click', navToggle);
+overlay.addEventListener('click', navToggle);
 document.addEventListener('scroll', scrollPage);
+document.addEventListener('scroll', scrollHeader);
 
 function navToggle() {
   btn.classList.toggle('open');
   overlay.classList.toggle('overlay-show');
   document.body.classList.toggle('stop-scrolling')
   menu.classList.toggle('show-menu');
+}
+
+function scrollHeader() {
+  const header = document.querySelector('.main-header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
 }
 
 function scrollPage() {

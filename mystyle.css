@@ -36,6 +36,12 @@ ul {
   text-transform: uppercase;
   height: 100px;
   padding: 0 50px;
+  transition: background-color 0.3s ease;
+}
+
+/* Header background on scroll */
+.main-header.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* logo */
