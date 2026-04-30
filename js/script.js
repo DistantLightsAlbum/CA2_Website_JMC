@@ -78,7 +78,7 @@ const title = document.querySelector('#title')
 const cover = document.querySelector('#cover')
 
 // Song titles
-const songs = ['jupiter', 'mars', 'moon', 'star']
+const songs = ['Jupiter', 'Mars', 'Moon', 'Star']
 
 // Keep track of songs
 let songIndex = 2

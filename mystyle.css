@@ -510,6 +510,11 @@ ul {
   .stats div {
     margin-bottom: 20px;
   }
+
+  /* Story page - show only first paragraph on mobile */
+  .section-inner-center p:nth-child(n+3) {
+    display: none;
+  }
 }
 
 
