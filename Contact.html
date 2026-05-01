@@ -50,7 +50,40 @@
 
   <div class="section-inner-center">
    <h3>Contact</h3>
-   <p>We'd love to hear from you! Please email example@test.email.com</p>
+   <p>We'd love to hear from you! Please click the button below to send us a message.</p>
+   
+   <!-- Contact Form Button -->
+   <div class="contact-section">
+     <a href="#" class="btn" id="open-contact-form">
+       <div class="hover"></div>
+       <span>Send Message</span>
+     </a>
+   </div>
+   </div>
+
+   <!-- Contact Form Modal -->
+   <div id="contact-modal" class="modal">
+     <div class="modal-content">
+       <span class="close-modal">&times;</span>
+       <h3>Get in Touch</h3>
+       <form id="form">
+         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+         <div class="form-group">
+           <input type="text" name="name" placeholder="Your Name" required>
+         </div>
+         <div class="form-group">
+           <input type="email" name="email" placeholder="Your Email" required>
+         </div>
+         <div class="form-group">
+           <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+         </div>
+         <button type="submit" class="btn">
+           <div class="hover"></div>
+           <span>Submit</span>
+         </button>
+       </form>
+       <div id="result"></div>
+     </div>
    </div>
 
    <div class="stats">

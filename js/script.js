@@ -87,24 +87,94 @@ function reset() {
 }
 
 // Apple Music Playlist Modal
-const modal = document.getElementById('playlist-modal');
-const openBtn = document.getElementById('open-playlist-btn');
-const closeBtn = document.querySelector('.close-modal');
+const playlistModal = document.getElementById('playlist-modal');
+const playlistOpenBtn = document.getElementById('open-playlist-btn');
 
-if (modal && openBtn) {
-  openBtn.addEventListener('click', (e) => {
+if (playlistModal && playlistOpenBtn) {
+  playlistOpenBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    modal.style.display = 'block';
+    playlistModal.style.display = 'block';
   });
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+  const playlistCloseBtn = playlistModal.querySelector('.close-modal');
+  playlistCloseBtn.addEventListener('click', () => {
+    playlistModal.style.display = 'none';
   });
 
-  window.addEventListener('click', (e) => {
-    if (e.target == modal) {
-      modal.style.display = 'none';
+  playlistModal.addEventListener('click', (e) => {
+    if (e.target == playlistModal) {
+      playlistModal.style.display = 'none';
     }
+  });
+}
+
+// Contact Form Modal
+const contactModal = document.getElementById('contact-modal');
+const contactOpenBtn = document.getElementById('open-contact-form');
+
+if (contactModal && contactOpenBtn) {
+  contactOpenBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    contactModal.style.display = 'block';
+  });
+
+  const contactCloseBtn = contactModal.querySelector('.close-modal');
+  contactCloseBtn.addEventListener('click', () => {
+    contactModal.style.display = 'none';
+  });
+
+  contactModal.addEventListener('click', (e) => {
+    if (e.target == contactModal) {
+      contactModal.style.display = 'none';
+    }
+  });
+}
+
+// Contact Form Submission
+const form = document.getElementById("form");
+const result = document.getElementById("result");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+    var object = {};
+    formData.forEach((value, key) => {
+      object[key] = value;
+    });
+    var json = JSON.stringify(object);
+    result.innerHTML = "Please wait...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = json.message;
+          result.style.color = "#4ade80";
+        } else {
+          console.log(response);
+          result.innerHTML = json.message;
+          result.style.color = "#f87171";
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+        result.style.color = "#f87171";
+      })
+      .then(function () {
+        form.reset();
+        setTimeout(() => {
+          result.innerHTML = "";
+        }, 5000);
+      });
   });
 }
 
