@@ -4,6 +4,25 @@ const menu = document.getElementById('mobile-menu');
 const counters = document.querySelectorAll('.counter');
 let scrollStarted = false;
 
+// Scroll-triggered animation for sections
+const observerOptions = {
+  threshold: 0.3,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, observerOptions);
+
+// Observe all section-inner elements
+document.querySelectorAll('.section-inner').forEach(section => {
+  sectionObserver.observe(section);
+});
+
 btn.addEventListener('click', navToggle);
 overlay.addEventListener('click', navToggle);
 document.addEventListener('scroll', scrollPage);
@@ -65,6 +84,28 @@ function countUp() {
 
 function reset() {
     counters.forEach((counter => counter.innerHTML = '0'));
+}
+
+// Apple Music Playlist Modal
+const modal = document.getElementById('playlist-modal');
+const openBtn = document.getElementById('open-playlist-btn');
+const closeBtn = document.querySelector('.close-modal');
+
+if (modal && openBtn) {
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+      modal.style.display = 'none';
+    }
+  });
 }
 
 const musicContainer = document.querySelector('.music-container')

@@ -112,20 +112,32 @@ ul {
     font-size: 22px;
     margin-bottom: 5px;
     font-weight: 300;
-    animation: fadeInUp 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(140px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 
   .section-inner h2 {
     font-size: 50px;
     margin-bottom: 20px;
     font-weight: 700;
-    animation: fadeInUp 0.5s ease-in-out 0.2s;
-    animation-fill-mode: both;
+    opacity: 0;
+    transform: translateY(140px);
+    transition: opacity 0.5s ease-in-out 0.2s, transform 0.5s ease-in-out 0.2s;
   }
 
   .section-inner a {
-     animation: fadeInUp 0.5s ease-in-out 0.4s;
-      animation-fill-mode: both;
+    opacity: 0;
+    transform: translateY(140px);
+    transition: opacity 0.5s ease-in-out 0.4s, transform 0.5s ease-in-out 0.4s;
+  }
+
+  /* Animated state - applied on scroll */
+  .section-inner.animate h4,
+  .section-inner.animate h2,
+  .section-inner.animate a {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /*Background Images*/
@@ -250,19 +262,19 @@ ul {
   }
 
    /* Transition hamburger to X when open */
-   .open {
+   .hamburger.open {
     transform: rotate(90deg);
    }
 
-   .open .hamburger-top {
+   .hamburger.open .hamburger-top {
      transform: rotate(45deg) translateY(6px) translateX(6px);
    }
 
-   .open .hamburger-middle {
+   .hamburger.open .hamburger-middle {
     display: none;
    }
 
-   .open .hamburger-bottom {
+   .hamburger.open .hamburger-bottom {
     transform: rotate(-45deg) translateY(6px) translateX(-6px);
    }
 
@@ -492,7 +504,7 @@ ul {
     }
 
     .logo {
-      width: 150px;
+      width: 180px;
       margin: auto;
     }
   
@@ -516,6 +528,76 @@ ul {
   .section-inner-center p:nth-child(n+3) {
     display: none;
   }
+
+  /* Mobile modal styles */
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-content h3 {
+    font-size: 16px;
+  }
+
+  .close-modal {
+    font-size: 24px;
+    top: 5px;
+    right: 10px;
+  }
+}
+
+/* Apple Music Modal */
+.apple-music-section {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(20, 20, 20, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+  width: 540px;
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.modal-content iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.close-modal:hover {
+  color: #aaa;
 }
 
 
