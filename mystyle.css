@@ -590,7 +590,7 @@ ul {
 /* Mobile modal styles */
 @media (max-width: 600px) {
   .modal-content {
-    width: 95%;
+    width: 150%;
     padding: 15px;
   }
 
