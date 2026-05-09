@@ -849,4 +849,7 @@ ul {
     transition: width 0.1s linear;
 }
 
-
+ @media only screen and (max-width: 767px) {
+.img   {
+    display: none;
+  }
